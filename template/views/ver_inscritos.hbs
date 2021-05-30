@@ -1,0 +1,25 @@
+{{>header}}
+<br>
+{{mostrar2}}
+<h1 class="text-center">Estudiantes matriculados a un curso</h1>
+<form action="/ver_inscritos" method="POST">
+    <div class="mb-3">
+        <label class="form-label">Elejir curso</label>
+        <select name="listaEst">
+            {{#each cursos}}
+            <option value="{{this._id}}">{{this.nombre}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Listar</button>
+    
+</form>
+<br>
+
+<form action="/eliminarEstudiante" method="POST">
+    {{{mostrar}}}
+</form>
+
+<br>
+
+{{>footer}}

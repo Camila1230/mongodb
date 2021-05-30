@@ -1,0 +1,45 @@
+{{>header}}
+{{respuesta}}
+<h2 class="text-center">Ver cursos como interesado</h2>
+
+
+<div class="accordion" id="accordionExample">
+    {{{verCursosDisponibles cursos}}}
+</div>
+<br>
+<h1 class="text-center">Ver cursos como administrador</h1>
+<br>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+            <th>Modalidad</th>
+            <th>Intesidad</th>
+            <th>Estado</th>
+        </thead>
+        <tbody>
+            {{{mostrarTodosLosCursos cursos}}}
+        </tbody>
+    </table>
+</div>
+<br>
+
+<h2>Habilitar o deshabilitar un curso</h2>
+<form class="row g-3" action="/modificar" method="POST">
+    <div class="col-auto">
+        <label class="form-label">Seleccione un curso</label>
+        <select name="id_Update_Cur">
+            {{#each cursos}}
+                <option value="{{this._id}}">{{this.nombre}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Cambiar</button>
+    </div>
+</form>
+{{>footer}}

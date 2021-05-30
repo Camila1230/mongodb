@@ -1,0 +1,46 @@
+{{>header}}
+
+{{{respuesta}}}
+
+<h1 class="text-center">Formulario para inscribir un nuevo estudiante</h1>
+<form class="row g-3" action="/inscribir" method="POST">
+    <div class="col-md-6">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control"  name="nombreEstudiante"  placeholder="Ingrese su nombre" required>
+    </div>
+    <div class="col-md-6">
+        <label  class="form-label">Cedula</label>
+        <input type="number" class="form-control" name="cedula" placeholder="número de cedula" required>
+    </div>
+    <div class="col-md-6">
+        <label  class="form-label">Contraseña</label>
+        <input type="password" class="form-control" name="contrasena" placeholder="contraseña" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Correo electronico</label>
+        <input type="mail" class="form-control"  name="correo"  placeholder="ejemplo@gmail.com" required>
+    </div>
+    <div class="col-md-6">
+        <label  class="form-label">Telefono</label>
+        <input type="number" class="form-control"  name="telefono" placeholder="ej: 301435533" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Seleccione un curso</label>
+        <select name="id_Curso">
+           {{#each cursos}}
+                <option value="{{this._id}}">{{this.nombre}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+    </div>
+</form>
+
+<br>
+<div class="accordion accordion-flush" id="accordionExample">
+
+</div>
+<br>
+
+{{>footer}}

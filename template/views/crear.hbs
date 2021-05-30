@@ -1,0 +1,38 @@
+{{>header}}
+{{{resultado}}}
+<h1 class="text-center">Formulario para crear un nuevo curso</h1>
+
+<form class="row g-3" action="/crear" method="POST">
+    <div class="col-md-6">
+        <label for="idCurso" class="form-label">Curso</label>
+        <input type="number" class="form-control" id="idCurso" name="idCurso"  placeholder="Ingrese solo el Id del curso" required>
+    </div>
+    <div class="col-md-6">
+        <label for="nombreCurso" class="form-label">Nombre del curso</label>
+        <input type="texto" class="form-control" id="nombreCurso" name="nombreCurso" placeholder="nombre aquí" required>
+    </div>
+    <div class="col-md-6">
+        <label for="modalidad" class="form-label">Modalidad</label>
+        <input type="texto" class="form-control" id="modalidad" name="modalidad"  placeholder="especifique la modadlidad" required>
+    </div>
+    <div class="col-md-6">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" name="precio" placeholder="indique aquí el valor" required>
+    </div>
+    <div class="col-md-6">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion"  placeholder="descripción del curso aqui" required>
+    </div>
+    <div class="col-md-6">
+        <label for="intensidad" class="form-label">Intencidad horaria</label>
+        <input type="number" class="form-control" id="intensidad" name="intensidad" placeholder="indique el número de horas" required>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Crear curso</button>
+    </div>
+</form>
+
+<br>
+</div>
+
+{{>footer}}

@@ -1,0 +1,30 @@
+{{>header}}
+<h1 class="text-center">Cursos en los que estás matriculado</h1>
+<br>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+            <th>Modalidad</th>
+            <th>Intensidad</th>
+            <th>Estado</th>
+        </thead>
+        <tbody>
+            {{#each cursos}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nombre}}</td>
+                <td>{{this.descripcion}}</td>
+                <td>{{this.valor}}</td>
+                <td>{{this.modalidad}}</td>
+                <td>{{this.intensidad}}</td>
+                <td>{{this.estado}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+    {{>footer}}
